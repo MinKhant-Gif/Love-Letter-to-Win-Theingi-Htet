@@ -739,22 +739,21 @@ const musicStatus =
 function enterWebsite() {
 
     opening.classList.add("hide");
-
     mainWebsite.classList.add("show");
 
-    // Start the music after the user's click
+    loveSong.volume = 1;
+
     loveSong.play().then(() => {
 
-        musicButton.innerHTML =
-            "♫ Pause Our Song";
+        musicButton.innerHTML = "♫ Pause Our Song";
+        musicStatus.innerHTML = "Playing our special song ♡";
+
+    }).catch((error) => {
 
         musicStatus.innerHTML =
-            "Playing our special song ♡";
+            "Please press Play Our Song ♡";
 
-    }).catch(() => {
-
-        musicStatus.innerHTML =
-            "Press Play Our Song to listen ♡";
+        console.log("Music Error:", error);
 
     });
 
@@ -802,8 +801,7 @@ async function toggleMusic() {
 
             await loveSong.play();
 
-            musicButton.innerHTML =
-                "♫ Pause Our Song";
+            musicButton.innerHTML = "♫ Pause Our Song";
 
             musicStatus.innerHTML =
                 "Playing our special song ♡";
@@ -811,7 +809,9 @@ async function toggleMusic() {
         } catch (error) {
 
             musicStatus.innerHTML =
-                "Please check love-song.mp3";
+                "Music file not found. Please check your MP3.";
+
+            console.log(error);
 
         }
 
@@ -819,11 +819,9 @@ async function toggleMusic() {
 
         loveSong.pause();
 
-        musicButton.innerHTML =
-            "♫ Play Our Song";
+        musicButton.innerHTML = "♫ Play Our Song";
 
-        musicStatus.innerHTML =
-            "Music paused ♡";
+        musicStatus.innerHTML = "Music paused ♡";
 
     }
 
