@@ -677,12 +677,24 @@ footer h2 {
      MUSIC FILE
 ========================= -->
 
-<audio id="love-song" loop preload="auto">
-
+<audio id="bgMusic" loop>
     <source src="love-song" type="audio/mpeg">
-
 </audio>
 
+<!-- ခလုတ်နှိပ်ရင် သီချင်းဖွင့်/ပိတ် လုပ်မယ့် Script -->
+<script>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicButton");
+
+    musicBtn.addEventListener("click", function() {
+        if (music.paused) {
+            music.play();
+            musicBtn.innerHTML = '<span class="music-icon">❚❚</span> Pause Music';
+        } else {
+            music.pause();
+            musicBtn.innerHTML = '<span class="music-icon">♪</span> Play Music';
+        }
+    });
 
 <!-- =========================
      JAVASCRIPT
