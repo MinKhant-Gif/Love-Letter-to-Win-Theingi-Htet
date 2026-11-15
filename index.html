@@ -678,8 +678,12 @@ footer h2 {
 ========================= -->
 
 <audio id="loveSong" loop preload="auto">
-    <source src="./love-song.mp3" type="audio/mpeg">
+
+    <source src="love-song.mp3" type="audio/mpeg">
+
 </audio>
+
+
 <!-- =========================
      JAVASCRIPT
 ========================= -->
@@ -738,21 +742,22 @@ const musicStatus =
 function enterWebsite() {
 
     opening.classList.add("hide");
+
     mainWebsite.classList.add("show");
 
-    loveSong.volume = 1;
-
+    // Start the music after the user's click
     loveSong.play().then(() => {
 
-        musicButton.innerHTML = "♫ Pause Our Song";
-        musicStatus.innerHTML = "Playing our special song ♡";
-
-    }).catch((error) => {
+        musicButton.innerHTML =
+            "♫ Pause Our Song";
 
         musicStatus.innerHTML =
-            "Please press Play Our Song ♡";
+            "Playing our special song ♡";
 
-        console.log("Music Error:", error);
+    }).catch(() => {
+
+        musicStatus.innerHTML =
+            "Press Play Our Song to listen ♡";
 
     });
 
@@ -800,7 +805,8 @@ async function toggleMusic() {
 
             await loveSong.play();
 
-            musicButton.innerHTML = "♫ Pause Our Song";
+            musicButton.innerHTML =
+                "♫ Pause Our Song";
 
             musicStatus.innerHTML =
                 "Playing our special song ♡";
@@ -808,9 +814,7 @@ async function toggleMusic() {
         } catch (error) {
 
             musicStatus.innerHTML =
-                "Music file not found. Please check your MP3.";
-
-            console.log(error);
+                "Please check love-song.mp3";
 
         }
 
@@ -818,9 +822,11 @@ async function toggleMusic() {
 
         loveSong.pause();
 
-        musicButton.innerHTML = "♫ Play Our Song";
+        musicButton.innerHTML =
+            "♫ Play Our Song";
 
-        musicStatus.innerHTML = "Music paused ♡";
+        musicStatus.innerHTML =
+            "Music paused ♡";
 
     }
 
