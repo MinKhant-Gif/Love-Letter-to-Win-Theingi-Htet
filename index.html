@@ -4,23 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>For Win Theingi Htet ♡</title>
 
 <style>
-
-/* =========================
-   GLOBAL
-========================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -36,16 +26,13 @@ button {
     cursor: pointer;
 }
 
-/* =========================
-   CINEMATIC OPENING
-========================= */
+/* OPENING */
 
 #opening {
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background:
-        radial-gradient(ellipse at center, #25202b 0%, #100f18 55%, #07070c 100%);
+    background: radial-gradient(ellipse at center, #25202b, #100f18 55%, #07070c);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,14 +55,8 @@ button {
 }
 
 @keyframes openingFade {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .opening-small {
@@ -99,7 +80,7 @@ button {
     font-weight: normal;
     letter-spacing: 2px;
     margin-bottom: 18px;
-    text-shadow: 0 0 30px rgba(225, 180, 155, 0.35);
+    text-shadow: 0 0 30px rgba(225,180,155,0.35);
 }
 
 .opening-description {
@@ -123,7 +104,6 @@ button {
 .opening-button:hover {
     background: #c49a82;
     color: #17121a;
-    box-shadow: 0 0 30px rgba(196, 154, 130, 0.3);
     transform: translateY(-3px);
 }
 
@@ -133,8 +113,6 @@ button {
     letter-spacing: 3px;
     margin-top: 50px;
 }
-
-/* Stars */
 
 .stars {
     position: absolute;
@@ -153,17 +131,9 @@ button {
 }
 
 @keyframes twinkle {
-    0%, 100% {
-        opacity: 0.2;
-        transform: scale(0.7);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.7);
-    }
+    0%,100% { opacity: 0.2; transform: scale(0.7); }
+    50% { opacity: 1; transform: scale(1.7); }
 }
-
-/* Shooting star */
 
 .shooting-star {
     position: absolute;
@@ -177,33 +147,19 @@ button {
 }
 
 @keyframes shooting {
-    0% {
-        left: -100px;
-        top: 15%;
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    30% {
-        left: 110%;
-        top: 45%;
-        opacity: 0;
-    }
-    100% {
-        left: 110%;
-        opacity: 0;
-    }
+    0% { left: -100px; top: 15%; opacity: 0; }
+    10% { opacity: 1; }
+    30% { left: 110%; top: 45%; opacity: 0; }
+    100% { left: 110%; opacity: 0; }
 }
 
-/* =========================
-   MAIN WEBSITE
-========================= */
+/* MAIN WEBSITE */
 
 #mainWebsite {
     opacity: 0;
     visibility: hidden;
     transition: opacity 1.5s ease;
+    position: relative;
 }
 
 #mainWebsite.show {
@@ -212,7 +168,7 @@ button {
 }
 
 .container {
-    max-width: 650px;
+    max-width: 760px;
     margin: auto;
     padding: 55px 20px;
     text-align: center;
@@ -245,17 +201,11 @@ button {
 }
 
 @keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
-/* =========================
-   ENVELOPE
-========================= */
+/* ENVELOPE */
 
 .envelope-area {
     margin: 70px auto 35px;
@@ -272,7 +222,7 @@ button {
     position: absolute;
     bottom: 0;
     border-radius: 5px;
-    box-shadow: 0 12px 30px rgba(100, 60, 40, 0.18);
+    box-shadow: 0 12px 30px rgba(100,60,40,0.18);
 }
 
 .envelope::before {
@@ -280,7 +230,7 @@ button {
     position: absolute;
     inset: 0;
     background: #cba28f;
-    clip-path: polygon(0 0, 50% 55%, 100% 0);
+    clip-path: polygon(0 0,50% 55%,100% 0);
     z-index: 4;
 }
 
@@ -289,7 +239,7 @@ button {
     position: absolute;
     inset: 0;
     background: #e7cbb9;
-    clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+    clip-path: polygon(0 100%,50% 50%,100% 100%);
     z-index: 3;
 }
 
@@ -298,7 +248,7 @@ button {
     width: 100%;
     height: 100%;
     background: #c49b89;
-    clip-path: polygon(0 0, 50% 55%, 100% 0);
+    clip-path: polygon(0 0,50% 55%,100% 0);
     transform-origin: top center;
     transition: transform 1s ease;
     z-index: 5;
@@ -320,6 +270,7 @@ button {
     transition: transform 1s ease;
     z-index: 2;
     border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(100,60,40,0.08);
 }
 
 .envelope.open .letter {
@@ -337,9 +288,7 @@ button {
     margin-top: 10px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .action-button {
     border: none;
@@ -348,7 +297,6 @@ button {
     padding: 13px 27px;
     border-radius: 30px;
     font-size: 13px;
-    cursor: pointer;
     margin: 8px;
     transition: 0.3s;
     letter-spacing: 1px;
@@ -370,9 +318,296 @@ button {
     color: white;
 }
 
-/* =========================
-   LOVE MESSAGE
-========================= */
+/* FLOATING PHOTO GALLERY */
+
+.memory-gallery {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 700px;
+    margin: 45px auto;
+    overflow: visible;
+}
+
+.memory-gallery.show {
+    display: block;
+}
+
+/* PHOTO CARDS */
+
+.memory-photo {
+    position: absolute;
+    width: 135px;
+    height: 170px;
+    padding: 8px 8px 23px;
+    background: #fffdf9;
+    border: 1px solid #eadbd1;
+    border-radius: 5px;
+    box-shadow: 0 8px 25px rgba(80,45,35,0.22);
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    transform: scale(0.2) rotate(0deg);
+    animation:
+        photoEnter 1s ease forwards,
+        photoFloat 5s ease-in-out infinite;
+    animation-delay: var(--delay), calc(var(--delay) + 1s);
+    transition: box-shadow 0.3s;
+}
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+    pointer-events: none;
+}
+
+.memory-photo:hover {
+    z-index: 30;
+    box-shadow: 0 15px 35px rgba(160,90,100,0.35);
+}
+
+@keyframes photoEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(0deg);
+    }
+    70% { opacity: 1; }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(var(--rotation));
+    }
+}
+
+@keyframes photoFloat {
+    0%,100% { translate: 0 0; }
+    50% { translate: 0 -12px; }
+}
+
+/* DESKTOP PHOTO POSITIONS */
+
+.memory-photo:nth-of-type(1) {
+    --rotation: -13deg;
+    --delay: 0.1s;
+    top: 20px;
+    left: 5%;
+}
+
+.memory-photo:nth-of-type(2) {
+    --rotation: 10deg;
+    --delay: 0.35s;
+    top: 65px;
+    left: 34%;
+}
+
+.memory-photo:nth-of-type(3) {
+    --rotation: 15deg;
+    --delay: 0.6s;
+    top: 10px;
+    right: 5%;
+}
+
+.memory-photo:nth-of-type(4) {
+    --rotation: 9deg;
+    --delay: 0.85s;
+    top: 215px;
+    left: 1%;
+}
+
+.memory-photo:nth-of-type(5) {
+    --rotation: -11deg;
+    --delay: 1.1s;
+    top: 250px;
+    left: 29%;
+}
+
+.memory-photo:nth-of-type(6) {
+    --rotation: 12deg;
+    --delay: 1.35s;
+    top: 205px;
+    right: 3%;
+}
+
+.memory-photo:nth-of-type(7) {
+    --rotation: -8deg;
+    --delay: 1.6s;
+    top: 440px;
+    left: 7%;
+}
+
+.memory-photo:nth-of-type(8) {
+    --rotation: 14deg;
+    --delay: 1.85s;
+    top: 455px;
+    left: 39%;
+}
+
+.memory-photo:nth-of-type(9) {
+    --rotation: -12deg;
+    --delay: 2.1s;
+    top: 420px;
+    right: 4%;
+}
+
+.memory-photo:nth-of-type(10) {
+    --rotation: 12deg;
+    --delay: 2.35s;
+    top: 540px;
+    left: 17%;
+}
+
+.memory-photo:nth-of-type(11) {
+    --rotation: -9deg;
+    --delay: 2.6s;
+    top: 550px;
+    left: 53%;
+}
+
+.memory-photo:nth-of-type(12) {
+    --rotation: 8deg;
+    --delay: 2.85s;
+    top: 520px;
+    right: 1%;
+}
+
+/* DECORATIONS AROUND PHOTOS */
+
+.gallery-decoration {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    font-size: 28px;
+    animation: ribbonFloat 4s ease-in-out infinite;
+}
+
+.gallery-decoration.one {
+    top: 160px;
+    left: 22%;
+}
+
+.gallery-decoration.two {
+    top: 370px;
+    right: 18%;
+    animation-delay: 1s;
+}
+
+.gallery-decoration.three {
+    top: 600px;
+    left: 45%;
+    animation-delay: 2s;
+}
+
+/* FALLING PETALS */
+
+.romantic-decorations {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.rose-petal {
+    position: fixed;
+    top: -50px;
+    pointer-events: none;
+    font-size: 22px;
+    opacity: 0;
+    animation: petalFall linear forwards;
+    filter: drop-shadow(0 2px 4px rgba(150,50,70,0.2));
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.9; }
+    90% { opacity: 0.8; }
+    100% {
+        transform: translateY(110vh) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+/* HEART RIBBONS */
+
+.heart-ribbon {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0.85;
+    animation: ribbonFloat 5s ease-in-out infinite;
+    filter: drop-shadow(0 4px 5px rgba(180,90,110,0.25));
+}
+
+.heart-ribbon::after {
+    content: "♡";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff0f3;
+    font-size: 13px;
+}
+
+@keyframes ribbonFloat {
+    0%,100% { transform: translateY(0) rotate(-12deg); }
+    50% { transform: translateY(-15px) rotate(12deg); }
+}
+
+/* PHOTO VIEWER */
+
+.photo-viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(15,10,18,0.93);
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    cursor: zoom-out;
+}
+
+.photo-viewer.active {
+    display: flex;
+    animation: viewerFade 0.3s ease;
+}
+
+.photo-viewer img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 8px solid #fffaf4;
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgba(255,190,200,0.25);
+    cursor: default;
+    animation: photoZoom 0.4s ease;
+}
+
+.close-photo {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+@keyframes viewerFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes photoZoom {
+    from { opacity: 0; transform: scale(0.75); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* LOVE MESSAGE */
 
 .message {
     display: none;
@@ -381,7 +616,7 @@ button {
     border-radius: 12px;
     margin: 40px auto;
     line-height: 2;
-    box-shadow: 0 8px 25px rgba(100, 60, 40, 0.08);
+    box-shadow: 0 8px 25px rgba(100,60,40,0.08);
     animation: appear 1s ease;
 }
 
@@ -401,19 +636,11 @@ button {
 }
 
 @keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================
-   MUSIC
-========================= */
+/* MUSIC */
 
 .music-box {
     margin: 50px auto 25px;
@@ -429,14 +656,7 @@ button {
     background: #b78a79;
 }
 
-.music-icon {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     margin-top: 65px;
@@ -450,9 +670,7 @@ footer h2 {
     margin: 15px 0;
 }
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* FLOATING HEARTS */
 
 .floating-heart {
     position: fixed;
@@ -470,14 +688,12 @@ footer h2 {
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
-@media(max-width: 450px) {
+@media(max-width: 500px) {
 
     .container {
-        padding-top: 40px;
+        padding: 40px 12px;
     }
 
     .envelope-area {
@@ -493,6 +709,87 @@ footer h2 {
         font-size: 13px;
     }
 
+    .memory-gallery {
+        height: 900px;
+        margin-top: 35px;
+    }
+
+    .memory-photo {
+        width: 112px;
+        height: 145px;
+    }
+
+    .memory-photo:nth-of-type(1) {
+        top: 10px;
+        left: 2%;
+    }
+
+    .memory-photo:nth-of-type(2) {
+        top: 45px;
+        left: 53%;
+    }
+
+    .memory-photo:nth-of-type(3) {
+        top: 155px;
+        right: 3%;
+    }
+
+    .memory-photo:nth-of-type(4) {
+        top: 190px;
+        left: 2%;
+    }
+
+    .memory-photo:nth-of-type(5) {
+        top: 300px;
+        left: 48%;
+    }
+
+    .memory-photo:nth-of-type(6) {
+        top: 335px;
+        left: 2%;
+    }
+
+    .memory-photo:nth-of-type(7) {
+        top: 445px;
+        right: 3%;
+    }
+
+    .memory-photo:nth-of-type(8) {
+        top: 480px;
+        left: 2%;
+    }
+
+    .memory-photo:nth-of-type(9) {
+        top: 590px;
+        left: 48%;
+    }
+
+    .memory-photo:nth-of-type(10) {
+        top: 625px;
+        left: 2%;
+    }
+
+    .memory-photo:nth-of-type(11) {
+        top: 735px;
+        right: 3%;
+    }
+
+    .memory-photo:nth-of-type(12) {
+        top: 770px;
+        left: 2%;
+    }
+
+    .gallery-decoration {
+        font-size: 21px;
+    }
+
+    .heart-ribbon {
+        font-size: 23px;
+    }
+
+    .message {
+        padding: 28px 18px;
+    }
 }
 
 </style>
@@ -500,9 +797,22 @@ footer h2 {
 
 <body>
 
-<!-- =========================
-     CINEMATIC OPENING
-========================= -->
+<!-- DECORATIVE RIBBONS -->
+
+<div class="romantic-decorations">
+
+    <span class="heart-ribbon" style="top:15%;left:8%;">🎀</span>
+
+    <span class="heart-ribbon" style="top:35%;right:7%;animation-delay:1s;">🎀</span>
+
+    <span class="heart-ribbon" style="top:65%;left:5%;animation-delay:2s;">🎀</span>
+
+    <span class="heart-ribbon" style="top:80%;right:10%;animation-delay:1.5s;">🎀</span>
+
+</div>
+
+
+<!-- OPENING SCREEN -->
 
 <section id="opening">
 
@@ -514,9 +824,7 @@ footer h2 {
 
         <span class="opening-heart">♡</span>
 
-        <p class="opening-small">
-            A SPECIAL MESSAGE FOR YOU
-        </p>
+        <p class="opening-small">A SPECIAL MESSAGE FOR YOU</p>
 
         <h1>Win Theingi Htet</h1>
 
@@ -539,21 +847,15 @@ footer h2 {
 </section>
 
 
-<!-- =========================
-     MAIN WEBSITE
-========================= -->
+<!-- MAIN WEBSITE -->
 
 <section id="mainWebsite">
 
 <div class="container">
 
-    <p class="small-title">
-        A SPECIAL DAY FOR SOMEONE SPECIAL
-    </p>
+    <p class="small-title">A SPECIAL DAY FOR SOMEONE SPECIAL</p>
 
-    <h1 class="main-title">
-        For Win Theingi Htet
-    </h1>
+    <h1 class="main-title">For Win Theingi Htet</h1>
 
     <p class="subtitle">
         Every love story is beautiful,<br>
@@ -562,9 +864,7 @@ footer h2 {
 
     <div class="heart">♡</div>
 
-    <p class="subtitle">
-        I have something special for you...
-    </p>
+    <p class="subtitle">I have something special for you...</p>
 
 
     <!-- ENVELOPE -->
@@ -574,13 +874,8 @@ footer h2 {
         <div class="envelope" id="envelope">
 
             <div class="letter">
-
                 <p>To My Love</p>
-
-                <div class="letter-heart">
-                    ♡
-                </div>
-
+                <div class="letter-heart">♡</div>
             </div>
 
             <div class="flap"></div>
@@ -589,6 +884,78 @@ footer h2 {
 
     </div>
 
+
+    <!-- PHOTO GALLERY -->
+
+    <div class="memory-gallery" id="memoryGallery">
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="1.jpg" alt="Our Memory 1">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="2.jpg" alt="Our Memory 2">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="3.jpg" alt="Our Memory 3">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="4.jpg" alt="Our Memory 4">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="5.jpg" alt="Our Memory 5">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="6.jpg" alt="Our Memory 6">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="7.jpg" alt="Our Memory 7">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="8.jpg" alt="Our Memory 8">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="9.jpg" alt="Our Memory 9">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="10.jpg" alt="Our Memory 10">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="11.jpg" alt="Our Memory 11">
+        </div>
+
+        <div class="memory-photo" onclick="openPhoto(this)">
+            <img src="12.jpg" alt="Our Memory 12">
+        </div>
+
+        <div class="gallery-decoration one">🎀</div>
+        <div class="gallery-decoration two">🌹</div>
+        <div class="gallery-decoration three">💗</div>
+
+    </div>
+
+
+    <!-- PHOTO VIEWER -->
+
+    <div class="photo-viewer" id="photoViewer" onclick="closePhoto()">
+
+        <span class="close-photo">&times;</span>
+
+        <img id="largePhoto" src="" alt="Our Memory">
+
+    </div>
+
+
+    <!-- BUTTONS -->
 
     <button class="action-button" onclick="openEnvelope()">
         Open My Letter ♡
@@ -640,23 +1007,16 @@ footer h2 {
 
         <p>A LITTLE SONG FOR YOU ♡</p>
 
-        <button
-            class="action-button"
-            id="musicButton"
-            onclick="toggleMusic()">
-
+        <button class="action-button" id="musicButton" onclick="toggleMusic()">
             ♫ Play Our Song
-
         </button>
 
-        <p id="musicStatus">
-            Made with love, just for you.
-        </p>
+        <p id="musicStatus">Made with love, just for you.</p>
 
     </div>
 
 
-    <!-- ANNIVERSARY DATE -->
+    <!-- ANNIVERSARY -->
 
     <footer>
 
@@ -673,20 +1033,12 @@ footer h2 {
 </section>
 
 
-<!-- =========================
-     MUSIC FILE
-========================= -->
+<!-- MUSIC FILE -->
 
 <audio id="loveSong" loop preload="auto">
-
     <source src="our-song.mp3" type="audio/mpeg">
-
 </audio>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
@@ -703,8 +1055,7 @@ for (let i = 0; i < 120; i++) {
     star.style.left = Math.random() * 100 + "%";
     star.style.top = Math.random() * 100 + "%";
 
-    star.style.animationDelay =
-        Math.random() * 3 + "s";
+    star.style.animationDelay = Math.random() * 3 + "s";
 
     star.style.animationDuration =
         (2 + Math.random() * 4) + "s";
@@ -717,24 +1068,15 @@ for (let i = 0; i < 120; i++) {
 /* ELEMENTS */
 
 const opening = document.getElementById("opening");
-
-const mainWebsite =
-    document.getElementById("mainWebsite");
-
-const envelope =
-    document.getElementById("envelope");
-
-const message =
-    document.getElementById("message");
-
-const loveSong =
-    document.getElementById("loveSong");
-
-const musicButton =
-    document.getElementById("musicButton");
-
-const musicStatus =
-    document.getElementById("musicStatus");
+const mainWebsite = document.getElementById("mainWebsite");
+const envelope = document.getElementById("envelope");
+const message = document.getElementById("message");
+const gallery = document.getElementById("memoryGallery");
+const photoViewer = document.getElementById("photoViewer");
+const largePhoto = document.getElementById("largePhoto");
+const loveSong = document.getElementById("loveSong");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
 
 
 /* ENTER WEBSITE */
@@ -745,19 +1087,15 @@ function enterWebsite() {
 
     mainWebsite.classList.add("show");
 
-    // Start the music after the user's click
     loveSong.play().then(() => {
 
-        musicButton.innerHTML =
-            "♫ Pause Our Song";
+        musicButton.innerHTML = "♫ Pause Our Song";
 
-        musicStatus.innerHTML =
-            "Playing our special song ♡";
+        musicStatus.innerHTML = "Playing our special song ♡";
 
     }).catch(() => {
 
-        musicStatus.innerHTML =
-            "Press Play Our Song to listen ♡";
+        musicStatus.innerHTML = "Press Play Our Song to listen ♡";
 
     });
 
@@ -770,16 +1108,21 @@ function openEnvelope() {
 
     envelope.classList.add("open");
 
+    message.style.display = "none";
+
+    gallery.classList.remove("show");
+
+    // Restart photo animation
+    void gallery.offsetWidth;
+
+    gallery.classList.add("show");
+
+    // Show message after photos appear
     setTimeout(() => {
 
         message.style.display = "block";
 
-        message.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-    }, 700);
+    }, 5000);
 
 }
 
@@ -790,9 +1133,55 @@ function closeEnvelope() {
 
     envelope.classList.remove("open");
 
+    gallery.classList.remove("show");
+
     message.style.display = "none";
 
+    closePhoto();
+
 }
+
+
+/* OPEN PHOTO */
+
+function openPhoto(element) {
+
+    const img = element.querySelector("img");
+
+    largePhoto.src = img.src;
+
+    photoViewer.classList.add("active");
+
+}
+
+
+/* PREVENT IMAGE CLICK FROM CLOSING VIEWER */
+
+largePhoto.addEventListener("click", function(event) {
+    event.stopPropagation();
+});
+
+
+/* CLOSE PHOTO */
+
+function closePhoto() {
+
+    photoViewer.classList.remove("active");
+
+    largePhoto.src = "";
+
+}
+
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closePhoto();
+    }
+
+});
 
 
 /* MUSIC CONTROL */
@@ -805,16 +1194,13 @@ async function toggleMusic() {
 
             await loveSong.play();
 
-            musicButton.innerHTML =
-                "♫ Pause Our Song";
+            musicButton.innerHTML = "♫ Pause Our Song";
 
-            musicStatus.innerHTML =
-                "Playing our special song ♡";
+            musicStatus.innerHTML = "Playing our special song ♡";
 
         } catch (error) {
 
-            musicStatus.innerHTML =
-                "Please check love-song.mp3";
+            musicStatus.innerHTML = "Please check our-song.mp3";
 
         }
 
@@ -822,40 +1208,26 @@ async function toggleMusic() {
 
         loveSong.pause();
 
-        musicButton.innerHTML =
-            "♫ Play Our Song";
+        musicButton.innerHTML = "♫ Play Our Song";
 
-        musicStatus.innerHTML =
-            "Music paused ♡";
+        musicStatus.innerHTML = "Music paused ♡";
 
     }
 
 }
 
 
-/* UPDATE BUTTON IF MUSIC ENDS */
-
-loveSong.addEventListener("ended", () => {
-
-    musicButton.innerHTML =
-        "♫ Play Our Song";
-
-});
-
-
 /* FLOATING HEARTS */
 
 function createHeart() {
 
-    const heart =
-        document.createElement("div");
+    const heart = document.createElement("div");
 
     heart.className = "floating-heart";
 
     heart.innerHTML = "♡";
 
-    heart.style.left =
-        Math.random() * 100 + "vw";
+    heart.style.left = Math.random() * 100 + "vw";
 
     heart.style.fontSize =
         (15 + Math.random() * 20) + "px";
@@ -866,14 +1238,44 @@ function createHeart() {
     document.body.appendChild(heart);
 
     setTimeout(() => {
-
         heart.remove();
-
     }, 8000);
 
 }
 
 setInterval(createHeart, 900);
+
+
+/* FALLING ROSE PETALS */
+
+function createRosePetal() {
+
+    const petal = document.createElement("div");
+
+    petal.className = "rose-petal";
+
+    const petals = ["🌹", "🌸", "💗", "🌷"];
+
+    petal.innerHTML =
+        petals[Math.floor(Math.random() * petals.length)];
+
+    petal.style.left = Math.random() * 100 + "vw";
+
+    petal.style.fontSize =
+        (12 + Math.random() * 15) + "px";
+
+    petal.style.animationDuration =
+        (6 + Math.random() * 6) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 12000);
+
+}
+
+setInterval(createRosePetal, 700);
 
 </script>
 
