@@ -6,6 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Win Theingi Htet ♡</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 * {
     margin: 0;
@@ -641,24 +645,37 @@ button {
     padding: 35px 25px;
     border-radius: 12px;
     margin: 40px auto;
-    line-height: 2;
+    line-height: 1.9;
+    font-family: 'Dancing Script', cursive;
     box-shadow: 0 8px 25px rgba(100,60,40,0.08);
     animation: appear 1s ease;
 }
 
 .message h2 {
-    font-weight: normal;
+    font-family: 'Dancing Script', cursive;
+    font-size: 34px;
+    font-weight: 600;
     margin-bottom: 25px;
 }
 
 .message p {
-    font-size: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 23px;
+    font-weight: 500;
     margin-bottom: 15px;
 }
 
 .message h3 {
-    font-weight: normal;
+    font-family: 'Dancing Script', cursive;
+    font-size: 29px;
+    font-weight: 600;
     margin: 20px 0;
+}
+
+@media(max-width: 500px) {
+    .message h2 { font-size: 30px; }
+    .message p { font-size: 21px; }
+    .message h3 { font-size: 26px; }
 }
 
 @keyframes appear {
