@@ -791,6 +791,20 @@ footer h2 {
         padding: 28px 18px;
     }
 }
+/* ROMANTIC TYPING EFFECT */
+
+.message.typing::after {
+    content: "▋";
+    display: inline-block;
+    color: #b97876;
+    animation: cursorBlink 0.7s infinite;
+    margin-left: 3px;
+}
+
+@keyframes cursorBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
 
 </style>
 </head>
@@ -939,7 +953,7 @@ footer h2 {
 
         <div class="gallery-decoration one">🎀</div>
         <div class="gallery-decoration two">🌹</div>
-        <div class="gallery-decoration three">🍂</div>
+        <div class="gallery-decoration three">💗</div>
 
     </div>
 
@@ -1104,23 +1118,93 @@ function enterWebsite() {
 
 /* OPEN ENVELOPE */
 
+/* TYPING EFFECT */
+
+let typingTimer = null;
+
+function startTyping(element) {
+
+    clearTimeout(typingTimer);
+
+    const walker = document.createTreeWalker(
+        element,
+        NodeFilter.SHOW_TEXT
+    );
+
+    const textNodes = [];
+
+    while (walker.nextNode()) {
+        const node = walker.currentNode;
+
+        if (node.textContent.length > 0) {
+            textNodes.push({
+                node: node,
+                text: node.textContent
+            });
+        }
+    }
+
+    textNodes.forEach(item => {
+        item.node.textContent = "";
+    });
+
+    element.classList.add("typing");
+
+    let nodeIndex = 0;
+    let charIndex = 0;
+
+    function typeNextCharacter() {
+
+        if (nodeIndex >= textNodes.length) {
+            element.classList.remove("typing");
+            return;
+        }
+
+        const current = textNodes[nodeIndex];
+
+        current.node.textContent +=
+            current.text.charAt(charIndex);
+
+        charIndex++;
+
+        if (charIndex >= current.text.length) {
+            nodeIndex++;
+            charIndex = 0;
+        }
+
+        typingTimer = setTimeout(
+            typeNextCharacter,
+            70
+        );
+    }
+
+    typeNextCharacter();
+}
+
+
+/* OPEN ENVELOPE */
+
 function openEnvelope() {
+
+    clearTimeout(typingTimer);
 
     envelope.classList.add("open");
 
     message.style.display = "none";
 
+    message.classList.remove("typing");
+
     gallery.classList.remove("show");
 
-    // Restart photo animation
     void gallery.offsetWidth;
 
     gallery.classList.add("show");
 
-    // Show message after photos appear
     setTimeout(() => {
 
         message.style.display = "block";
+
+        startTyping(message);
 
     }, 5000);
 
@@ -1130,6 +1214,10 @@ function openEnvelope() {
 /* CLOSE ENVELOPE */
 
 function closeEnvelope() {
+
+    clearTimeout(typingTimer);
+
+    message.classList.remove("typing");
 
     envelope.classList.remove("open");
 
@@ -1254,7 +1342,7 @@ function createRosePetal() {
 
     petal.className = "rose-petal";
 
-    const petals = ["🌹", "🌸", "🍂", "🌷"];
+    const petals = ["🌹", "🌸", "💗", "🌷"];
 
     petal.innerHTML =
         petals[Math.floor(Math.random() * petals.length)];
